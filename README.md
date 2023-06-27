@@ -8,6 +8,6 @@
 
 3. Run `make doc` in terminal to generate openApi.
 
-4. View Api in : https://http://192.168.1.74:8000
+4. View Api in : https://scodus.github.io/himcoop-swagger/
 
 #### Reference `https://joolfe.github.io/postman-to-openapi/`
