@@ -13,12 +13,17 @@ info:
     url: https://es.wikipedia.org/wiki/Licencia_MIT
 servers:
   - url: http://{{url}}
+tags:
+  - name: producer
+  - name: tea
+  - name: blog
+  - name: album
 paths:
-  /api/category:
+  /api/producer:
     get:
       tags:
-        - default
-      summary: category
+        - producer
+      summary: all producer
       parameters:
         - name: paginate
           in: query
@@ -41,28 +46,18 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/producer:
+  /api/producer/{id}:
     get:
       tags:
-        - default
-      summary: producer
+        - producer
+      summary: single producer
       parameters:
-        - name: paginate
-          in: query
+        - name: id
+          in: path
           schema:
-            type: string
-        - name: page
-          in: query
-          schema:
-            type: string
-        - name: limit
-          in: query
-          schema:
-            type: string
-        - name: search_keyword
-          in: query
-          schema:
-            type: string
+            type: integer
+          required: true
+          example: '2'
       responses:
         '200':
           description: Successful response
@@ -71,8 +66,56 @@ paths:
   /api/tea:
     get:
       tags:
-        - default
-      summary: tea
+        - tea
+      summary: all tea
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+        - name: category_id
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/tea/{slug}:
+    get:
+      tags:
+        - tea
+      summary: single tea
+      parameters:
+        - name: slug
+          in: path
+          schema:
+            type: string
+          required: true
+          example: test-tea
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/blog:
+    get:
+      tags:
+        - blog
+      summary: all blog
       parameters:
         - name: paginate
           in: query
@@ -95,11 +138,72 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/blog:
+  /api/blog/{slug}:
+    get:
+      tags:
+        - blog
+      summary: single blog
+      parameters:
+        - name: slug
+          in: path
+          schema:
+            type: string
+          required: true
+          example: test
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/album:
+    get:
+      tags:
+        - album
+      summary: all album
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/album/{slug}:
+    get:
+      tags:
+        - album
+      summary: single album
+      parameters:
+        - name: slug
+          in: path
+          schema:
+            type: string
+          required: true
+          example: asdf
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/category:
     get:
       tags:
         - default
-      summary: blog
+      summary: all category
       parameters:
         - name: paginate
           in: query
@@ -126,7 +230,7 @@ paths:
     get:
       tags:
         - default
-      summary: team
+      summary: all team
       parameters:
         - name: paginate
           in: query
@@ -153,7 +257,7 @@ paths:
     get:
       tags:
         - default
-      summary: service
+      summary: all service
       parameters:
         - name: paginate
           in: query
@@ -180,7 +284,7 @@ paths:
     get:
       tags:
         - default
-      summary: history
+      summary: all history
       parameters:
         - name: paginate
           in: query

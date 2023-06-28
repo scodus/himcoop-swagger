@@ -8,7 +8,275 @@
 	},
 	"item": [
 		{
-			"name": "category",
+			"name": "producer",
+			"item": [
+				{
+					"name": "all producer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/producer?paginate=&page&limit&search_keyword",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"producer"
+							],
+							"query": [
+								{
+									"key": "paginate",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": null
+								},
+								{
+									"key": "limit",
+									"value": null
+								},
+								{
+									"key": "search_keyword",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single producer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/producer/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"producer",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tea",
+			"item": [
+				{
+					"name": "all tea",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/tea?paginate=&page&limit=&search_keyword&category_id=",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"tea"
+							],
+							"query": [
+								{
+									"key": "paginate",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": null
+								},
+								{
+									"key": "limit",
+									"value": ""
+								},
+								{
+									"key": "search_keyword",
+									"value": null
+								},
+								{
+									"key": "category_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single tea",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/tea/:slug",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"tea",
+								":slug"
+							],
+							"variable": [
+								{
+									"key": "slug",
+									"value": "test-tea"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "blog",
+			"item": [
+				{
+					"name": "all blog",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/blog?paginate=&page&limit=&search_keyword",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"blog"
+							],
+							"query": [
+								{
+									"key": "paginate",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": null
+								},
+								{
+									"key": "limit",
+									"value": ""
+								},
+								{
+									"key": "search_keyword",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single blog",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/blog/:slug",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"blog",
+								":slug"
+							],
+							"variable": [
+								{
+									"key": "slug",
+									"value": "test"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "album",
+			"item": [
+				{
+					"name": "all album",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/album?paginate=&page&limit=&search_keyword",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"album"
+							],
+							"query": [
+								{
+									"key": "paginate",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": null
+								},
+								{
+									"key": "limit",
+									"value": ""
+								},
+								{
+									"key": "search_keyword",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single album",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/album/:slug",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"album",
+								":slug"
+							],
+							"variable": [
+								{
+									"key": "slug",
+									"value": "asdf"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "all category",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -44,115 +312,7 @@
 			"response": []
 		},
 		{
-			"name": "producer",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/api/producer?paginate=&page&limit&search_keyword",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"api",
-						"producer"
-					],
-					"query": [
-						{
-							"key": "paginate",
-							"value": ""
-						},
-						{
-							"key": "page",
-							"value": null
-						},
-						{
-							"key": "limit",
-							"value": null
-						},
-						{
-							"key": "search_keyword",
-							"value": null
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "tea",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/api/tea?paginate=&page&limit=&search_keyword",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"api",
-						"tea"
-					],
-					"query": [
-						{
-							"key": "paginate",
-							"value": ""
-						},
-						{
-							"key": "page",
-							"value": null
-						},
-						{
-							"key": "limit",
-							"value": ""
-						},
-						{
-							"key": "search_keyword",
-							"value": null
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "blog",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/api/blog?paginate=&page&limit=&search_keyword",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"api",
-						"blog"
-					],
-					"query": [
-						{
-							"key": "paginate",
-							"value": ""
-						},
-						{
-							"key": "page",
-							"value": null
-						},
-						{
-							"key": "limit",
-							"value": ""
-						},
-						{
-							"key": "search_keyword",
-							"value": null
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "team",
+			"name": "all team",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -188,7 +348,7 @@
 			"response": []
 		},
 		{
-			"name": "service",
+			"name": "all service",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -224,7 +384,7 @@
 			"response": []
 		},
 		{
-			"name": "history",
+			"name": "all history",
 			"request": {
 				"method": "GET",
 				"header": [],
