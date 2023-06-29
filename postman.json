@@ -276,6 +276,68 @@
 			]
 		},
 		{
+			"name": "site setting",
+			"item": [
+				{
+					"name": "homepage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/site-setting/homepage",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"site-setting",
+								"homepage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "about",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/site-setting/importance-of-tea",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"site-setting",
+								"importance-of-tea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "importance of tea",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/site-setting/about",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"site-setting",
+								"about"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "all category",
 			"request": {
 				"method": "GET",
@@ -414,6 +476,44 @@
 							"key": "search_keyword",
 							"value": null
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "store inquiry contact",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "dfdasdfasdf",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "fdasdfasdf",
+							"type": "text"
+						},
+						{
+							"key": "inquiry",
+							"value": "asdfasdfasdf",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/inquiry",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"inquiry"
 					]
 				}
 			},

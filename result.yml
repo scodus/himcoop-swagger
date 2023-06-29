@@ -18,6 +18,7 @@ tags:
   - name: tea
   - name: blog
   - name: album
+  - name: site setting
 paths:
   /api/producer:
     get:
@@ -199,6 +200,36 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /api/site-setting/homepage:
+    get:
+      tags:
+        - site setting
+      summary: homepage
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/site-setting/importance-of-tea:
+    get:
+      tags:
+        - site setting
+      summary: about
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/site-setting/about:
+    get:
+      tags:
+        - site setting
+      summary: importance of tea
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/category:
     get:
       tags:
@@ -302,6 +333,31 @@ paths:
           in: query
           schema:
             type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/inquiry:
+    post:
+      tags:
+        - default
+      summary: store inquiry contact
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: dfdasdfasdf
+                email:
+                  type: string
+                  example: fdasdfasdf
+                inquiry:
+                  type: string
+                  example: asdfasdfasdf
       responses:
         '200':
           description: Successful response
