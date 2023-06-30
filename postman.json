@@ -298,7 +298,26 @@
 					"response": []
 				},
 				{
-					"name": "about",
+					"name": "about us",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/site-setting/about-us",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"site-setting",
+								"about-us"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "importance of tea",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -311,25 +330,6 @@
 								"api",
 								"site-setting",
 								"importance-of-tea"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "importance of tea",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/api/site-setting/about",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"api",
-								"site-setting",
-								"about"
 							]
 						}
 					},
@@ -482,7 +482,43 @@
 			"response": []
 		},
 		{
-			"name": "store inquiry contact",
+			"name": "all partner",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/partner?paginate=&page&limit=&search_keyword",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"partner"
+					],
+					"query": [
+						{
+							"key": "paginate",
+							"value": ""
+						},
+						{
+							"key": "page",
+							"value": null
+						},
+						{
+							"key": "limit",
+							"value": ""
+						},
+						{
+							"key": "search_keyword",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "store contact inquiry",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -500,20 +536,68 @@
 							"type": "text"
 						},
 						{
-							"key": "inquiry",
+							"key": "description",
 							"value": "asdfasdfasdf",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "{{url}}/api/inquiry",
+					"raw": "{{url}}/api/contact-inquiry",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"api",
-						"inquiry"
+						"contact-inquiry"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "store tea inquiry",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "dfdasdfasdf",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "fdasdfasdf",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "asdfasdfasdf",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "asdfasdf",
+							"type": "text"
+						},
+						{
+							"key": "company_name",
+							"value": "sdfasdf",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/tea-inquiry",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"tea-inquiry"
 					]
 				}
 			},

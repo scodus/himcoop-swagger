@@ -210,17 +210,17 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/site-setting/importance-of-tea:
+  /api/site-setting/about-us:
     get:
       tags:
         - site setting
-      summary: about
+      summary: about us
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
-  /api/site-setting/about:
+  /api/site-setting/importance-of-tea:
     get:
       tags:
         - site setting
@@ -338,11 +338,38 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/inquiry:
+  /api/partner:
+    get:
+      tags:
+        - default
+      summary: all partner
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/contact-inquiry:
     post:
       tags:
         - default
-      summary: store inquiry contact
+      summary: store contact inquiry
       requestBody:
         content:
           multipart/form-data:
@@ -355,9 +382,40 @@ paths:
                 email:
                   type: string
                   example: fdasdfasdf
-                inquiry:
+                description:
                   type: string
                   example: asdfasdfasdf
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/tea-inquiry:
+    post:
+      tags:
+        - default
+      summary: store tea inquiry
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: dfdasdfasdf
+                email:
+                  type: string
+                  example: fdasdfasdf
+                description:
+                  type: string
+                  example: asdfasdfasdf
+                phone:
+                  type: string
+                  example: asdfasdf
+                company_name:
+                  type: string
+                  example: sdfasdf
       responses:
         '200':
           description: Successful response
