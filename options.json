@@ -12,12 +12,12 @@
       "url": "https://github.com/joolfe/logoBanner.png",
       "backgroundColor": "#FFFFFF",
       "altText": "logo"
-    },
-    "servers": [
-      {
-        "url": "https://admin.himcoop.com",
-        "description": "Base URL"
-      }
-    ]
-  }
+    }
+  },
+  "servers": [
+    {
+      "url": "https://admin.himcoop.com",
+      "description": "Base URL"
+    }
+  ]
 }
