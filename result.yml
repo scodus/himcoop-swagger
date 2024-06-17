@@ -17,6 +17,7 @@ tags:
   - name: producer
   - name: tea
   - name: blog
+  - name: message
   - name: album
   - name: site setting
 paths:
@@ -151,6 +152,53 @@ paths:
             type: string
           required: true
           example: test
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/message:
+    get:
+      tags:
+        - message
+      summary: list
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '5'
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/message/{slug}:
+    get:
+      tags:
+        - message
+      summary: single
+      parameters:
+        - name: slug
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
       responses:
         '200':
           description: Successful response

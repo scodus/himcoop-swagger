@@ -15,7 +15,7 @@
     },
     "servers": [
       {
-        "url": "https://url.com",
+        "url": "https://admin.himcoop.com",
         "description": "Base URL"
       }
     ]
