@@ -18,6 +18,7 @@ tags:
   - name: producer
   - name: tea
   - name: blog
+  - name: news
   - name: message
   - name: album
   - name: site setting
@@ -153,6 +154,50 @@ paths:
             type: string
           required: true
           example: test
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/news:
+    get:
+      tags:
+        - news
+      summary: list
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/news/{slug}:
+    get:
+      tags:
+        - news
+      summary: single
+      parameters:
+        - name: slug
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
       responses:
         '200':
           description: Successful response
